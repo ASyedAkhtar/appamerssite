@@ -3,6 +3,7 @@ package site.amers.server.entity;
 import java.time.LocalDateTime;
 
 import org.hibernate.annotations.CreationTimestamp;
+// import org.hibernate.annotations.Type;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import jakarta.persistence.Column;
@@ -30,6 +31,7 @@ public class Article {
     private String title;
 
     @Lob
+    // @Type(PostgreSQLCITextType.class)
     @Column(columnDefinition = "text")
     private String content;
 
