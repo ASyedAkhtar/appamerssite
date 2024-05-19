@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+$dark-background-color: navy;
+$dark-color: white;
+$light-background-color: mintcream;
+$light-color: black;
+
+html > body {
+    margin: 0rem;
+}
+
+.dark {
+    background-color: $dark-background-color;
+    color: $dark-color;
+}
+
+.light {
+    background-color: $light-background-color;
+    color: $light-color;
+}

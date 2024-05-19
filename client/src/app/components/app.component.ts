@@ -1,0 +1,18 @@
+import { Component, inject } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+
+import { TopbarComponent } from './topbar/topbar.component';
+import { ThemeService } from '../services/theme.service';
+import { NgClass } from '@angular/common';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [RouterOutlet, TopbarComponent, NgClass],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.scss'
+})
+export class AppComponent {
+  title = 'amers.site';
+  themeService: ThemeService = inject(ThemeService);
+}

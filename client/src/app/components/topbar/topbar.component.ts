@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-topbar',
   standalone: true,
   imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  templateUrl: './topbar.component.html',
+  styleUrl: './topbar.component.scss'
 })
-export class AppComponent {
-  title = 'client';
+export class TopbarComponent {
+  title = 'topbar';
 }
