@@ -1,5 +1,20 @@
-<main class="main">
-    <div class="content">
-        Topbar
+<div class="header">
+    <button><span class="material-symbols-outlined">
+            menu
+        </span>
+    </button>
+    Amer's Site
+    <div class="theme-control">
+        @if (this.themeService.themeSignal() === 'dark') {
+            <button (click)="this.toggleTheme()"><span class="material-symbols-outlined">
+                dark_mode
+            </span>
+        </button>
+        } @else {
+            <button (click)="this.toggleTheme()"><span class="material-symbols-outlined">
+                light_mode
+            </span>
+        </button>
+        }
     </div>
-</main>
+</div>

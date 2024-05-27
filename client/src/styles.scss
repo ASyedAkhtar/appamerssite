@@ -1,18 +1,56 @@
 $dark-background-color: navy;
 $dark-color: white;
+$dark-background-border: black;
 $light-background-color: mintcream;
 $light-color: black;
+$light-background-border: white;
 
 html > body {
+    box-sizing: border-box;
     margin: 0rem;
 }
 
+button {
+    border-radius: 0.5rem;
+    cursor: pointer;
+    padding: 0.3rem 0.5rem;
+}
+
 .dark {
+    background: linear-gradient(179deg, $dark-background-color 0%, $dark-background-border 50%);
     background-color: $dark-background-color;
+    box-shadow: 
+        inset 0rem -3rem 3rem rgba(10, 2, 83, 0.6),
+        0rem 0.1rem 0.1rem rgba(10, 2, 83, 0.6);
     color: $dark-color;
+
+    button {
+        background-color: $dark-background-color;
+        border-color: $dark-background-border;
+        color: $dark-color;
+
+        &:hover {
+            background-color: $dark-background-border;
+        }
+    }
 }
 
 .light {
+    background: linear-gradient(179deg, $light-background-color 50%, $light-background-border 100%);
     background-color: $light-background-color;
+    box-shadow: 
+        inset 0rem -3rem 3rem rgba(219, 248, 210, 0.5),
+        0rem 0.1rem 0.1rem rgba(10, 27, 4, 0.6);
     color: $light-color;
+
+
+    button {
+        background-color: $light-background-color;
+        border-color: $light-background-border;
+        color: $light-color;
+
+        &:hover {
+            background-color: $light-background-border;
+        }
+    }
 }

@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'app-topbar',
@@ -10,4 +11,8 @@ import { RouterOutlet } from '@angular/router';
 })
 export class TopbarComponent {
   title = 'topbar';
+  themeService: ThemeService = inject(ThemeService);
+  toggleTheme() {
+    this.themeService.updateTheme();
+  }
 }
