@@ -1,7 +1,7 @@
 $dark-background-color: navy;
 $dark-color: white;
 $dark-background-border: black;
-$light-background-color: mintcream;
+$light-background-color: rgb(182, 255, 188, 0.8);
 $light-color: black;
 $light-background-border: white;
 
@@ -17,12 +17,19 @@ button {
 }
 
 .dark {
-    background: linear-gradient(179deg, $dark-background-color 0%, $dark-background-border 50%);
-    background-color: $dark-background-color;
-    box-shadow: 
-        inset 0rem -3rem 3rem rgba(10, 2, 83, 0.6),
-        0rem 0.1rem 0.1rem rgba(10, 2, 83, 0.6);
+    // background: linear-gradient(179deg, $dark-background-color 0%, $dark-background-border 50%);
+    // box-shadow: 
+    //     inset 0rem -3rem 3rem rgba(10, 2, 83, 0.6),
+    //     0rem 0.1rem 0.1rem rgba(10, 2, 83, 0.6);
     color: $dark-color;
+
+    .body {
+        background-image: url('./assets/images/suavespawn.jpg');
+        background-color: $dark-background-color;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-size: 100% 100%;
+    }
 
     button {
         background-color: $dark-background-color;
@@ -36,13 +43,19 @@ button {
 }
 
 .light {
-    background: linear-gradient(179deg, $light-background-color 50%, $light-background-border 100%);
-    background-color: $light-background-color;
-    box-shadow: 
-        inset 0rem -3rem 3rem rgba(219, 248, 210, 0.5),
-        0rem 0.1rem 0.1rem rgba(10, 27, 4, 0.6);
+    // background: linear-gradient(179deg, $light-background-color 50%, $light-background-border 100%);
+    // background-color: $light-background-color;
+    // box-shadow: 
+    //     inset 0rem -3rem 3rem rgba(219, 248, 210, 0.5),
+    //     0rem 0.1rem 0.1rem rgba(10, 27, 4, 0.6);
     color: $light-color;
 
+    .body {
+        background-color: $light-background-color;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-size: 100% 100%;
+    }
 
     button {
         background-color: $light-background-color;

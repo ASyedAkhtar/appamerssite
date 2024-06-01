@@ -1,6 +1,13 @@
 .header {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+.header-span {
     align-items: center;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     padding: 0.5rem 2rem;
 }

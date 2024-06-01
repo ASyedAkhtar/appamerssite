@@ -10,7 +10,7 @@ import { ThemeService } from '../../services/theme.service';
   styleUrl: './topbar.component.scss'
 })
 export class TopbarComponent {
-  title = 'topbar';
+  title = `Amer's Site`;
   themeService: ThemeService = inject(ThemeService);
   toggleTheme() {
     this.themeService.updateTheme();

@@ -1,9 +1,10 @@
 <div class="header">
+    <div class="header-span">
     <button><span class="material-symbols-outlined">
             menu
         </span>
     </button>
-    Amer's Site
+    {{ title }}
     <div class="theme-control">
         @if (this.themeService.themeSignal() === 'dark') {
             <button (click)="this.toggleTheme()"><span class="material-symbols-outlined">
@@ -16,5 +17,6 @@
             </span>
         </button>
         }
+    </div>
     </div>
 </div>
