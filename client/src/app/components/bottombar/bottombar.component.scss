@@ -1,0 +1,32 @@
+$gloss-color: rgb(255, 255, 255, 0.05);
+$transparent-color: rgb(255, 255, 255, 0);
+
+.footer {
+    background: linear-gradient(179deg, $transparent-color 0%, $gloss-color 50%);
+    bottom: 0;
+    box-shadow: 
+        inset 0rem -3rem 3rem rgba(255, 255, 255, 0.05),
+        0rem -0.1rem 0.1rem rgba(255, 255, 255, 0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+.footer-span {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 0.4rem 2rem;
+}
+
+button {
+    border-radius: 0.5rem;
+    cursor: pointer;
+    margin: 0rem 0.2rem;
+    padding: 0.1rem 0.3rem;
+}
+
+span#link-message {
+    margin-right: 5rem;
+}

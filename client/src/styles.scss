@@ -1,19 +1,129 @@
-$dark-background-color: navy;
-$dark-color: white;
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+@import 'material-icons/iconfont/material-icons.css';
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$client-primary: mat.define-palette(mat.$indigo-palette);
+$client-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$client-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$client-theme: mat.define-light-theme((color: (primary: $client-primary,
+                accent: $client-accent,
+                warn: $client-warn,
+            ),
+            typography: mat.define-typography-config(),
+            density: 0));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($client-theme);
+
+// // https://developers.google.com/fonts/docs/material_icons
+// @font-face {
+//     font-family: 'Material Icons';
+//     font-style: normal;
+//     font-weight: 400;
+//     src: url('./assets/fonts/MaterialSymbolsOutlined[FILL,GRAD,opsz,wght].codepoints');
+//     /* For IE6-8 */
+//     src: local('Material Icons'),
+//         local('MaterialIcons-Regular'),
+//         url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'),
+//         url(https://example.com/MaterialIcons-Regular.woff) format('woff'),
+//         url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
+// }
+
+// .material-icons {
+//     font-family: 'Material Icons';
+//     font-weight: normal;
+//     font-style: normal;
+//     font-size: 24px;
+//     /* Preferred icon size */
+//     display: inline-block;
+//     line-height: 1;
+//     text-transform: none;
+//     letter-spacing: normal;
+//     word-wrap: normal;
+//     white-space: nowrap;
+//     direction: ltr;
+
+//     /* Support for all WebKit browsers. */
+//     -webkit-font-smoothing: antialiased;
+//     /* Support for Safari and Chrome. */
+//     text-rendering: optimizeLegibility;
+
+//     /* Support for Firefox. */
+//     -moz-osx-font-smoothing: grayscale;
+
+//     /* Support for IE. */
+//     font-feature-settings: 'liga';
+// }
+
+// @font-face {
+//     font-family: 'Material Icons';
+//     font-style: normal;
+//     font-weight: 400;
+//     src: url('./assets/fonts/MaterialIcons-Regular.eot');
+//     /* For IE6-8 */
+//     src: local('Material Icons'),
+//         local('MaterialIcons-Regular'),
+//         url('./assets/fonts/MaterialIcons-Regular.woff2') format('woff2'),
+//         url('./assets/fonts/MaterialIcons-Regular.woff') format('woff'),
+//         url('./assets/fonts/MaterialIcons-Regular.ttf') format('truetype');
+// }
+
+// .material-icons {
+//     font-family: 'Material Icons';
+//     font-weight: normal;
+//     font-style: normal;
+//     font-size: 24px;
+//     /* Preferred icon size */
+//     display: inline-block;
+//     line-height: 1;
+//     text-transform: none;
+//     letter-spacing: normal;
+//     word-wrap: normal;
+//     white-space: nowrap;
+//     direction: ltr;
+
+//     /* Support for all WebKit browsers. */
+//     -webkit-font-smoothing: antialiased;
+//     /* Support for Safari and Chrome. */
+//     text-rendering: optimizeLegibility;
+
+//     /* Support for Firefox. */
+//     -moz-osx-font-smoothing: grayscale;
+
+//     /* Support for IE. */
+//     font-feature-settings: 'liga';
+// }
+
+
+
+$dark-background-color: rgb(0, 0, 34);
+$dark-color: black;
 $dark-background-border: black;
 $light-background-color: rgb(182, 255, 188, 0.8);
-$light-color: black;
+$light-color: white;
 $light-background-border: white;
 
-html > body {
+html>body {
     box-sizing: border-box;
     margin: 0rem;
-}
-
-button {
-    border-radius: 0.5rem;
-    cursor: pointer;
-    padding: 0.3rem 0.5rem;
 }
 
 .dark {
@@ -21,23 +131,22 @@ button {
     // box-shadow: 
     //     inset 0rem -3rem 3rem rgba(10, 2, 83, 0.6),
     //     0rem 0.1rem 0.1rem rgba(10, 2, 83, 0.6);
-    color: $dark-color;
+    color: $light-color;
 
     .body {
-        background-image: url('./assets/images/suavespawn.jpg');
         background-color: $dark-background-color;
+        background-image: url('./assets/images/2-bwb-1080.jpg');
+        background-position: center;
         background-repeat: no-repeat;
-        background-size: contain;
-        background-size: 100% 100%;
+        background-size: cover;
+        //background-size: 100% 100%;
     }
 
-    button {
-        background-color: $dark-background-color;
-        border-color: $dark-background-border;
-        color: $dark-color;
+    .button-main {
+        color: $light-color;
 
         &:hover {
-            background-color: $dark-background-border;
+            outline-color: $light-color;
         }
     }
 }
@@ -48,22 +157,48 @@ button {
     // box-shadow: 
     //     inset 0rem -3rem 3rem rgba(219, 248, 210, 0.5),
     //     0rem 0.1rem 0.1rem rgba(10, 27, 4, 0.6);
-    color: $light-color;
+    color: $dark-color;
 
     .body {
         background-color: $light-background-color;
+        background-image: url('./assets/images/2-bww-1080.jpg');
+        background-position: center;
         background-repeat: no-repeat;
-        background-size: contain;
-        background-size: 100% 100%;
+        background-size: cover;
     }
 
-    button {
-        background-color: $light-background-color;
-        border-color: $light-background-border;
-        color: $light-color;
+    .button-main {
+        color: $dark-color;
 
         &:hover {
-            background-color: $light-background-border;
+            outline-color: $dark-color;
         }
+    }
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.button-main {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    outline: none;
+    // overflow: hidden;
+    padding: 0.3rem 0.5rem;
+
+    &:hover {
+        outline-style: solid;
+        outline-width: 0.1rem;
+        transition: outline-color 0.2s ease-in;
     }
 }

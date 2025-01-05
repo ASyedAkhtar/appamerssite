@@ -1,21 +1,12 @@
 <div class="header">
     <div class="header-span">
-    <button><span class="material-symbols-outlined">
-            menu
-        </span>
-    </button>
-    {{ title }}
+    <button class="button-main"><span class="material-icons">menu</span></button>
+    <button class="button-main">{{ title }}</button>
     <div class="theme-control">
         @if (this.themeService.themeSignal() === 'dark') {
-            <button (click)="this.toggleTheme()"><span class="material-symbols-outlined">
-                dark_mode
-            </span>
-        </button>
+            <button class="button-main" (click)="this.toggleTheme()"><span class="material-icons">light_mode</span></button>
         } @else {
-            <button (click)="this.toggleTheme()"><span class="material-symbols-outlined">
-                light_mode
-            </span>
-        </button>
+            <button class="button-main" (click)="this.toggleTheme()"><span class="material-icons">dark_mode</span></button>
         }
     </div>
     </div>
