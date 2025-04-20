@@ -1,2 +1,2 @@
-# aa_blogapp
+# amerssite
 My personal blog application.
